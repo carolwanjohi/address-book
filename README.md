@@ -5,7 +5,7 @@
 ## By **[Nason Mang'eli](https://github.com/nasonmangeli) and [Carol Wanjohi](https://carolwanjohi.github.io/)**
 
 ## Description
-This displays the work done at [Moringa School](http://moringaschool.com/) by [Nason Mang'eli](https://github.com/nasonmangeli) and [Carol Wanjohi](https://carolwanjohi.github.io/). It is website that saves contact information. The aim is to practise creating and using constructors.
+This is a website that saves contact information. The aim is to practise creating and using constructors.
 
 ## Known Bugs
 
