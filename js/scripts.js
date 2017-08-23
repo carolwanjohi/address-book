@@ -17,6 +17,10 @@ Contact.prototype.fullName = function() {
     return this.firstName + " " + this.lastName;
 }
 
+Address.prototype.fullAddress = function() {
+  return this.street + ", " + this.city + ", " + this.county;
+}
+
 // Front-end
 $(document).ready(function() {
 
@@ -37,43 +41,47 @@ $(document).ready(function() {
    '</div>');
   });
 
-    $("form#new-contact").submit(function(event) {
-      event.preventDefault();
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
 
-      var inputtedFirstName = $("input#new-first-name").val();
-      var inputtedLastName = $("input#new-last-name").val();
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
 
-      var newContact = new Contact(inputtedFirstName, inputtedLastName);
+    var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
-      $("ul#contacts").append("<li><span class='contact'>" + 
-        newContact.fullName() + "</span></li>");
+    $("ul#contacts").append("<li><span class='contact'>" + 
+      newContact.fullName() + "</span></li>");
 
-      $(".new-address").each(function() {
-        var inputtedStreet = $(this).find("input.new-street").val();
-        var inputtedCity = $(this).find("input.new-city").val();
-        var inputtedCounty = $(this).find("input.new-county").val();
+    $(".new-address").each(function() {
+      var inputtedStreet = $(this).find("input.new-street").val();
+      var inputtedCity = $(this).find("input.new-city").val();
+      var inputtedCounty = $(this).find("input.new-county").val();
 
-        var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty);
-        
-        newContact.addresses.push(newAddress);
-      });
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedCounty);
       
-      $(".contact").last().click(function() {
-        $("#show-contact").show();
-        $("#show-contact h2").text(newContact.firstName);
-        $(".first-name").text(newContact.firstName);
-        $(".last-name").text(newContact.lastName);
-        $("ul#addresses").text("");
-        newContact.addresses.forEach(function(address) {
-          $("ul#addresses").append("<li>" + address.street + ", " + 
-            address.city + " " + address.County + "</li>");
-        });
-      });
-
-      $("input#new-first-name").val("");
-      $("input#new-last-name").val("");
-      $("input.new-street").val("");
-      $("input.new-city").val("");
-      $("input.new-county").val("");
+      newContact.addresses.push(newAddress);
     });
+    
+    $(".contact").last().click(function() {
+      $("#show-contact").show();
+      $("#show-contact h2").text(newContact.firstName);
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+      $("ul#addresses").text("");
+      newContact.addresses.forEach(function(address) {
+        $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
+      });
+    });
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input.new-street").val("");
+    $("input.new-city").val("");
+    $("input.new-county").val("");
   });
+});
+
+
+
+
+
