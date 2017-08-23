@@ -2,7 +2,7 @@
 
 ## This is an address book application to store contact information, 21/08/2017.
 
-## By **[Nason Mang'eli](https://github.com/nasonmangeli) and [Carol Wanjohi](https://carolwanjohi.github.io/)**
+## By **[Nason Mang'eli](https://github.com/nasonmangeli), [Shadrack Ndolo](https://github.com/ShadrackNdolo) and [Carol Wanjohi](https://carolwanjohi.github.io/)**
 
 ## Description
 This is a website that saves contact information. The aim is to practise creating and using constructors.
@@ -18,4 +18,4 @@ No known bugs.
 
 ### License
 
-MIT 2017 **[Nason Mang'eli](https://github.com/nasonmangeli)  and [Carol Wanjohi](https://carolwanjohi.github.io/)**
+MIT 2017 **[Nason Mang'eli](https://github.com/nasonmangeli), [Shadrack Ndolo](https://github.com/ShadrackNdolo) and [Carol Wanjohi](https://carolwanjohi.github.io/)**
