@@ -13,12 +13,22 @@ function Address(street, city, county) {
   this.county = county;
 }
 
+// Prototype
 Contact.prototype.fullName = function() {
     return this.firstName + " " + this.lastName;
 }
 
 Address.prototype.fullAddress = function() {
   return this.street + ", " + this.city + ", " + this.county;
+}
+
+// Function
+function resetFields() {
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input.new-street").val("");
+    $("input.new-city").val("");
+    $("input.new-county").val("");
 }
 
 // Front-end
@@ -73,11 +83,7 @@ $(document).ready(function() {
       });
     });
 
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-county").val("");
+    resetFields();
   });
 });
 
