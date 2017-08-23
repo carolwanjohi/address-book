@@ -1,9 +1,10 @@
 // Back-end
 
 // Constructor 
-function Contact(first, last) {
+function Contact(first, last, email) {
   this.firstName = first;
   this.lastName = last;
+  this.email = email;
   this.addresses = [];
 }
 
@@ -26,6 +27,7 @@ Address.prototype.fullAddress = function() {
 function resetFields() {
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
+    $("input#new-email").val("");
     $("input.new-street").val("");
     $("input.new-city").val("");
     $("input.new-county").val("");
@@ -57,7 +59,10 @@ $(document).ready(function() {
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
 
-    var newContact = new Contact(inputtedFirstName, inputtedLastName);
+    var inputtedEmail = $("input#new-email").val();
+
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedEmail);
+    console.log(newContact);
 
     $("ul#contacts").append("<li><span class='contact'>" + 
       newContact.fullName() + "</span></li>");
@@ -77,6 +82,7 @@ $(document).ready(function() {
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
+      $(".emailAddress").text(newContact.email);
       $("ul#addresses").text("");
       newContact.addresses.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
