@@ -41,28 +41,33 @@ function resetFields() {
 $(document).ready(function() {
 
     $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' + 
-    '<div class="form-group"' +
-        '<label for="typeOfAddress">Type of Address</label>' + 
-        '<select class="form-control" id="typeOfAddress">'+
-            '<option class="none">None</option>' + 
-            '<option class="homeAddress">Home</option>' + 
-            '<option class="workAddress">Work</option>' + 
-        '</select>' + 
-    '</div>'
-    +'<div class="form-group">' +
-       '<label for="new-street">Street</label>' +
-       '<input type="text" class="form-control new-street">' +
-     '</div>' +
-     '<div class="form-group">' +
-       '<label for="new-city">City</label>' +
-       '<input type="text" class="form-control new-city">' +
-     '</div>' +
-     '<div class="form-group">' +
-       '<label for="new-county">County</label>' +
-       '<input type="text" class="form-control new-county">' +
-     '</div>' +
-    '</div>');
+    $("#new-addresses").append(
+        '<div class="new-address">' + 
+            '<div class="form-group"' +
+            '<label for="typeOfAddress">Type of Address</label>' + 
+            '<select class="form-control" id="typeOfAddress">'+
+                '<option class="none">None</option>' + 
+                '<option class="homeAddress">Home</option>' + 
+                '<option class="workAddress">Work</option>' + 
+            '</select>' + 
+        '</div>'+
+
+        '<div class="form-group">' +
+           '<label for="new-street">Street</label>' +
+           '<input type="text" class="form-control new-street">' +
+         '</div>' +
+
+         '<div class="form-group">' +
+           '<label for="new-city">City</label>' +
+           '<input type="text" class="form-control new-city">' +
+         '</div>' +
+
+         '<div class="form-group">' +
+           '<label for="new-county">County</label>' +
+           '<input type="text" class="form-control new-county">' +
+         '</div>' +
+
+        '</div>');
     });
 
     $("form#new-contact").submit(function(event) {
@@ -97,7 +102,7 @@ $(document).ready(function() {
           $("#show-contact h2").text(newContact.firstName);
           $(".first-name").text(newContact.firstName);
           $(".last-name").text(newContact.lastName);
-          // $(".emailAddress").text(newContact.email);
+          $(".emailAddress").text(newContact.email);
           // $("#typeOfAddressInput").text(inputtedTypeOfAddress);
           $("ul#addresses").text("");
           newContact.addresses.forEach(function(address) {
@@ -106,7 +111,7 @@ $(document).ready(function() {
         });
 
         resetFields();
-        // $.remove("#");
+        // $('.toBeRemoved').remove("#");
     });
 });
 
