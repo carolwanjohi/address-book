@@ -98,7 +98,6 @@ $(document).ready(function() {
               $("#show-contact h2").text(newContact.firstName);
               $(".first-name").text(newContact.firstName);
               $(".last-name").text(newContact.lastName);
-              console.log("I am groot");
               $(".emailAddress").text(newContact.email);
               // $("#typeOfAddressInput").text(inputtedTypeOfAddress);
               $("ul#addresses").text("");
